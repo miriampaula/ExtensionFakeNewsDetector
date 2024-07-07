@@ -1,0 +1,42 @@
+/* popup.css */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  width: 300px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 14px;
+  color: green;
+}
+
+#content {
+    text-align: center;
+  }
+  
+  #spinner {
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    border: 5px solid lightgray;
+    border-top: 5px solid blue;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  canvas {
+    display: none;
+    margin: 0 auto;
+  }
+  

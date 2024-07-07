@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "FakeNewsDetector",
+  "version": "5.00.10",
+  "description": "Chrome extension for fake news detection",
+  "icons": {
+    "16": "icons/check.png",
+    "32": "icons/check.png",
+    "48": "icons/check.png",
+    "128": "icons/check.png"
+  },
+  "permissions": ["contextMenus", "storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "./background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["./injections/utils.js", "./injections/youtube/youtube.js"]
+    },
+    {
+      "matches": ["<all_urls>"],
+      "exclude_matches": ["https://www.youtube.com/*"],
+      "js": ["./injections/all/all.js", "./injections/utils.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "./popup/hello.html"
+  }
+}
